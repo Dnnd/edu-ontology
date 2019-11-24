@@ -9,4 +9,143 @@
 <http://agentlab.ru/2019/edu_ontology> rdf:type owl:Ontology ;
                                         owl:imports <http://xworks.gr/ontologies/ccso> .
 
+#################################################################
+#    Classes
+#################################################################
+
+###  http://xworks.gr/ontologies/ccso#Course
+<http://xworks.gr/ontologies/ccso#Course> rdfs:label "Курс"@ru .
+
+
+###  http://xworks.gr/ontologies/ccso#KnowledgeUnit
+<http://xworks.gr/ontologies/ccso#KnowledgeUnit> rdfs:label "Модуль"@ru .
+
+
+###  http://xworks.gr/ontologies/ccso#Lecturer
+<http://xworks.gr/ontologies/ccso#Lecturer> rdfs:label "Лектор"@ru .
+
+
+###  http://xworks.gr/ontologies/ccso#Syllabus
+<http://xworks.gr/ontologies/ccso#Syllabus> rdfs:label "Учебный план"@ru .
+
+
+###  http://xworks.gr/ontologies/ccso#Topic
+<http://xworks.gr/ontologies/ccso#Topic> rdfs:label "Тема Занятия"@ru .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.
+<http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.> rdf:type owl:NamedIndividual ,
+                                                                                          <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Архитектура_информационных_систем
+:Архитектура_информационных_систем rdf:type owl:NamedIndividual ,
+                                            <http://xworks.gr/ontologies/ccso#Course> ;
+                                   <http://xworks.gr/ontologies/ccso#hasSyllabus> :РПД_АИС .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Архитектура_микропроцессора_i8086._Система_команд.
+<http://agentlab.ru/2019/edu_ontology#Архитектура_микропроцессора_i8086._Система_команд.> rdf:type owl:NamedIndividual ,
+                                                                                                   <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Введение_в_архитектуру_информационных_систем
+:Введение_в_архитектуру_информационных_систем rdf:type owl:NamedIndividual ,
+                                                       <http://xworks.gr/ontologies/ccso#KnowledgeUnit> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086
+:Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086 rdf:type owl:NamedIndividual ,
+                                                                            <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Лычков_Игорь_Игоревич
+:Лычков_Игорь_Игоревич rdf:type owl:NamedIndividual ,
+                                <http://xworks.gr/ontologies/ccso#Lecturer> ;
+                       <http://xworks.gr/ontologies/ccso#instructorOf> :РПД_АИС .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Обработка_прерываний_на_ассемблере_микропроцессора_i8086
+:Обработка_прерываний_на_ассемблере_микропроцессора_i8086 rdf:type owl:NamedIndividual ,
+                                                                   <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_контроллере_прерываний._Обмен_сигналами_между_контроллером_прерываний_и_процессором.
+<http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_контроллере_прерываний._Обмен_сигналами_между_контроллером_прерываний_и_процессором.> rdf:type owl:NamedIndividual ,
+                                                                                                                                                            <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_процессоре._Таблица_векторов_прерываний.
+<http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_процессоре._Таблица_векторов_прерываний.> rdf:type owl:NamedIndividual ,
+                                                                                                                <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Организация_памяти_информационных_систем
+:Организация_памяти_информационных_систем rdf:type owl:NamedIndividual ,
+                                                   <http://xworks.gr/ontologies/ccso#KnowledgeUnit> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Организация_параллельных_вычислений
+:Организация_параллельных_вычислений rdf:type owl:NamedIndividual ,
+                                              <http://xworks.gr/ontologies/ccso#KnowledgeUnit> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Основы_цифровой_схемотехники
+:Основы_цифровой_схемотехники rdf:type owl:NamedIndividual ,
+                                       <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.
+<http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.> rdf:type owl:NamedIndividual ,
+                                                                                                       <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.
+<http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.> rdf:type owl:NamedIndividual ,
+                                                                                                                                      <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#РПД_АИС
+:РПД_АИС rdf:type owl:NamedIndividual ,
+                  <http://xworks.gr/ontologies/ccso#Syllabus> ;
+         <http://xworks.gr/ontologies/ccso#coversTopic> <http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.> ,
+                                                        <http://agentlab.ru/2019/edu_ontology#Архитектура_микропроцессора_i8086._Система_команд.> ,
+                                                        :Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086 ,
+                                                        :Обработка_прерываний_на_ассемблере_микропроцессора_i8086 ,
+                                                        <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_контроллере_прерываний._Обмен_сигналами_между_контроллером_прерываний_и_процессором.> ,
+                                                        <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_процессоре._Таблица_векторов_прерываний.> ,
+                                                        :Основы_цифровой_схемотехники ,
+                                                        <http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.> ,
+                                                        <http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.> ,
+                                                        <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.
+<http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> rdf:type owl:NamedIndividual ,
+                                                                                                                                 <http://xworks.gr/ontologies/ccso#Topic> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://xworks.gr/ontologies/ccso#Bachelor> rdfs:label "Бакалавр"@ru .
+
+
+<http://xworks.gr/ontologies/ccso#KnowledgeBody> rdfs:label "Программа"@ru .
+
+
+<http://xworks.gr/ontologies/ccso#LearningOutcome> rdfs:label "Результат Обучения"@ru .
+
+
+<http://xworks.gr/ontologies/ccso#Master> rdfs:label "Магистр"@ru .
+
+
+<http://xworks.gr/ontologies/ccso#Student> rdfs:label "Студент"@ru .
+
+
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
