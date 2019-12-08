@@ -8,11 +8,12 @@ PREFIX rdfs:	<http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ccso:	<https://w3id.org/ccso/ccso#>
 
 
-SELECT ?module ?method ?topic 
+SELECT ?module ?method ?topic ?duration
 WHERE {
 	?module ccso:lists ?topic .
 	?course ccso:hasSyllabus ?syll .
 	?syll ccso:coversTopic ?topic .
-	?te ccso:hasTopic ?topic .
-	?te ccso:followsTEMethod ?method .
+	?te 	ccso:hasTopic ?topic ;
+			ccso:followsTEMethod ?method .
+	?topic ccso:duration ?duration .
 }

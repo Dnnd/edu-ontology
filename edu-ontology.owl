@@ -4,6 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ccso: <https://w3id.org/ccso/ccso#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://agentlab.ru/2019/edu_ontology> .
 
@@ -40,7 +41,8 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 
 ###  http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.
 <http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.> rdf:type owl:NamedIndividual ,
-                                                                                          ccso:Topic .
+                                                                                          ccso:Topic ;
+                                                                                 ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Архитектура_информационных_систем
@@ -51,7 +53,8 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 
 ###  http://agentlab.ru/2019/edu_ontology#Архитектура_микропроцессора_i8086._Система_команд.
 <http://agentlab.ru/2019/edu_ontology#Архитектура_микропроцессора_i8086._Система_команд.> rdf:type owl:NamedIndividual ,
-                                                                                                   ccso:Topic .
+                                                                                                   ccso:Topic ;
+                                                                                          ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Введение_в_архитектуру_информационных_систем
@@ -71,7 +74,8 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 
 ###  http://agentlab.ru/2019/edu_ontology#Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086
 :Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086 rdf:type owl:NamedIndividual ,
-                                                                            ccso:Topic .
+                                                                            ccso:Topic ;
+                                                                   ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Лекция_1.1
@@ -130,42 +134,50 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 
 ###  http://agentlab.ru/2019/edu_ontology#Обработка_прерываний_на_ассемблере_микропроцессора_i8086
 :Обработка_прерываний_на_ассемблере_микропроцессора_i8086 rdf:type owl:NamedIndividual ,
-                                                                   ccso:Topic .
+                                                                   ccso:Topic ;
+                                                          ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_контроллере_прерываний._Обмен_сигналами_между_контроллером_прерываний_и_процессором.
 <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_контроллере_прерываний._Обмен_сигналами_между_контроллером_прерываний_и_процессором.> rdf:type owl:NamedIndividual ,
-                                                                                                                                                            ccso:Topic .
+                                                                                                                                                            ccso:Topic ;
+                                                                                                                                                   ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_процессоре._Таблица_векторов_прерываний.
 <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_процессоре._Таблица_векторов_прерываний.> rdf:type owl:NamedIndividual ,
-                                                                                                                ccso:Topic .
+                                                                                                                ccso:Topic ;
+                                                                                                       ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Организация_памяти_информационных_систем
 :Организация_памяти_информационных_систем rdf:type owl:NamedIndividual ,
-                                                   ccso:KnowledgeUnit .
+                                                   ccso:KnowledgeUnit ;
+                                          ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Организация_параллельных_вычислений
 :Организация_параллельных_вычислений rdf:type owl:NamedIndividual ,
-                                              ccso:KnowledgeUnit .
+                                              ccso:KnowledgeUnit ;
+                                     ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Основы_цифровой_схемотехники
 :Основы_цифровой_схемотехники rdf:type owl:NamedIndividual ,
-                                       ccso:Topic .
+                                       ccso:Topic ;
+                              ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.
 <http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.> rdf:type owl:NamedIndividual ,
-                                                                                                       ccso:Topic .
+                                                                                                       ccso:Topic ;
+                                                                                              ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.
 <http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.> rdf:type owl:NamedIndividual ,
-                                                                                                                                      ccso:Topic .
+                                                                                                                                      ccso:Topic ;
+                                                                                                                             ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#РПД_АИС
@@ -180,7 +192,8 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                           :Основы_цифровой_схемотехники ,
                           <http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.> ,
                           <http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.> ,
-                          <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> .
+                          <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> ;
+         ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Семинар_С1.1
@@ -206,7 +219,8 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 
 ###  http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.
 <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> rdf:type owl:NamedIndividual ,
-                                                                                                                                 ccso:Topic .
+                                                                                                                                 ccso:Topic ;
+                                                                                                                        ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  https://w3id.org/ccso/ccso#Lecture
