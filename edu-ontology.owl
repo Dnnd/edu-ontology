@@ -56,12 +56,70 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 
 ###  http://agentlab.ru/2019/edu_ontology#Введение_в_архитектуру_информационных_систем
 :Введение_в_архитектуру_информационных_систем rdf:type owl:NamedIndividual ,
-                                                       ccso:KnowledgeUnit .
+                                                       ccso:KnowledgeUnit ;
+                                              ccso:lists <http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.> ,
+                                                         <http://agentlab.ru/2019/edu_ontology#Архитектура_микропроцессора_i8086._Система_команд.> ,
+                                                         :Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086 ,
+                                                         :Обработка_прерываний_на_ассемблере_микропроцессора_i8086 ,
+                                                         <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_контроллере_прерываний._Обмен_сигналами_между_контроллером_прерываний_и_процессором.> ,
+                                                         <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_процессоре._Таблица_векторов_прерываний.> ,
+                                                         :Основы_цифровой_схемотехники ,
+                                                         <http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.> ,
+                                                         <http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.> ,
+                                                         <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086
 :Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086 rdf:type owl:NamedIndividual ,
                                                                             ccso:Topic .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Лекция_1.1
+:Лекция_1.1 rdf:type owl:NamedIndividual ,
+                     ccso:TeachingEvent ;
+            ccso:followsTEMethod ccso:Lecture .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Лекция_1.2
+:Лекция_1.2 rdf:type owl:NamedIndividual ,
+                     ccso:TeachingEvent ;
+            ccso:followsTEMethod ccso:Lecture ;
+            ccso:hasTopic <http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Лекция_1.3
+:Лекция_1.3 rdf:type owl:NamedIndividual ,
+                     ccso:TeachingEvent ;
+            ccso:followsTEMethod ccso:Lecture ;
+            ccso:hasTopic <http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Лекция_1.4
+:Лекция_1.4 rdf:type owl:NamedIndividual ,
+                     ccso:TeachingEvent ;
+            ccso:followsTEMethod ccso:Lecture ;
+            ccso:hasTopic <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_контроллере_прерываний._Обмен_сигналами_между_контроллером_прерываний_и_процессором.> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Лекция_1.5
+:Лекция_1.5 rdf:type owl:NamedIndividual ,
+                     ccso:TeachingEvent ;
+            ccso:followsTEMethod ccso:Lecture ;
+            ccso:hasTopic <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_процессоре._Таблица_векторов_прерываний.> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Лекция_1.6
+:Лекция_1.6 rdf:type owl:NamedIndividual ,
+                     ccso:TeachingEvent ;
+            ccso:followsTEMethod ccso:Lecture ;
+            ccso:hasTopic <http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Лекция_1.7
+:Лекция_1.7 rdf:type owl:NamedIndividual ,
+                     ccso:TeachingEvent ;
+            ccso:followsTEMethod ccso:Lecture ;
+            ccso:hasTopic <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Лычков_Игорь_Игоревич
@@ -125,9 +183,34 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                           <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> .
 
 
+###  http://agentlab.ru/2019/edu_ontology#Семинар_С1.1
+:Семинар_С1.1 rdf:type owl:NamedIndividual ,
+                       ccso:TeachingEvent ;
+              ccso:followsTEMethod ccso:Seminar ;
+              ccso:hasTopic :Основы_цифровой_схемотехники .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Семинар_С1.2
+:Семинар_С1.2 rdf:type owl:NamedIndividual ,
+                       ccso:TeachingEvent ;
+              ccso:followsTEMethod ccso:Seminar ;
+              ccso:hasTopic :Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086 .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Семинар_С1.3
+:Семинар_С1.3 rdf:type owl:NamedIndividual ,
+                       ccso:TeachingEvent ;
+              ccso:followsTEMethod ccso:Seminar ;
+              ccso:hasTopic :Обработка_прерываний_на_ассемблере_микропроцессора_i8086 .
+
+
 ###  http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.
 <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> rdf:type owl:NamedIndividual ,
                                                                                                                                  ccso:Topic .
+
+
+###  https://w3id.org/ccso/ccso#Lecture
+ccso:Lecture ccso:hasTopic <http://agentlab.ru/2019/edu_ontology#Архитектура_микропроцессора_i8086._Система_команд.> .
 
 
 #################################################################
