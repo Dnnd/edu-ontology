@@ -70,6 +70,11 @@ ccso:Course rdfs:label "Курс"@ru .
 ccso:KnowledgeUnit rdfs:label "Модуль"@ru .
 
 
+###  https://w3id.org/ccso/ccso#LearningOutcome
+ccso:LearningOutcome rdfs:subClassOf esco:Skill ;
+                     rdfs:label "Результат Обучения"@ru .
+
+
 ###  https://w3id.org/ccso/ccso#Lecturer
 ccso:Lecturer rdfs:label "Лектор"@ru .
 
@@ -430,7 +435,7 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 :СОК-10-able rdf:type owl:NamedIndividual ,
                       esco:Skill ;
              esco:isOptionalSkillFor :СОК-10 ;
-             esco:skillType <http://data.europa.eu/esco/skill-type/knowledge> ;
+             esco:skillType <http://data.europa.eu/esco/skill-type/skill> ;
              skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#2e0d96a9-dd50-471c-a9eb-69eb5b9268e7> .
 
 
@@ -446,7 +451,7 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 :СОК-10-own rdf:type owl:NamedIndividual ,
                      esco:Skill ;
             esco:isOptionalSkillFor :СОК-10 ;
-            esco:skillType <http://data.europa.eu/esco/skill-type/knowledge> ;
+            esco:skillType <http://data.europa.eu/esco/skill-type/competence> ;
             skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#02524842-5000-4209-a662-09eb85ce0fb6> .
 
 
@@ -459,13 +464,15 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 ###  http://agentlab.ru/2019/edu_ontology#СОК-11-able
 :СОК-11-able rdf:type owl:NamedIndividual ,
                       esco:Skill ;
-             esco:skillType <http://data.europa.eu/esco/skill-type/knowledge> ;
+             esco:isOptionalSkillFor :СОК-11 ;
+             esco:skillType <http://data.europa.eu/esco/skill-type/skill> ;
              skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#4c0b28a7-6d05-4109-b053-5eee087f163c> .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#СОК-11-know
 :СОК-11-know rdf:type owl:NamedIndividual ,
                       esco:Skill ;
+             esco:isOptionalSkillFor :СОК-11 ;
              esco:skillType <http://data.europa.eu/esco/skill-type/knowledge> ;
              skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#0a86ea88-04c7-4827-825c-279733a4f777> .
 
@@ -473,7 +480,8 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 ###  http://agentlab.ru/2019/edu_ontology#СОК-11-own
 :СОК-11-own rdf:type owl:NamedIndividual ,
                      esco:Skill ;
-            esco:skillType <http://data.europa.eu/esco/skill-type/knowledge> ;
+            esco:isOptionalSkillFor :СОК-11 ;
+            esco:skillType <http://data.europa.eu/esco/skill-type/competence> ;
             skosxl:prefLabel :f9b699a9-8f65-4ef8-9855-45fe767d67db .
 
 
@@ -672,8 +680,17 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                                                                                                                         ccso:duration "PT2H"^^xsd:duration .
 
 
+###  http://data.europa.eu/esco/skill-type/competence
+<http://data.europa.eu/esco/skill-type/competence> rdf:type owl:NamedIndividual .
+
+
 ###  http://data.europa.eu/esco/skill-type/knowledge
 <http://data.europa.eu/esco/skill-type/knowledge> rdf:type owl:NamedIndividual .
+
+
+###  http://data.europa.eu/esco/skill-type/skill
+<http://data.europa.eu/esco/skill-type/skill> rdf:type owl:NamedIndividual ;
+                                              esco:isOptionalSkillFor :СОК-11 .
 
 
 ###  https://w3id.org/ccso/ccso#Lecture
@@ -688,9 +705,6 @@ ccso:Bachelor rdfs:label "Бакалавр"@ru .
 
 
 ccso:KnowledgeBody rdfs:label "Программа"@ru .
-
-
-ccso:LearningOutcome rdfs:label "Результат Обучения"@ru .
 
 
 ccso:Master rdfs:label "Магистр"@ru .
