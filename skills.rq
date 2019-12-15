@@ -9,14 +9,10 @@ PREFIX ccso:	<https://w3id.org/ccso/ccso#>
 PREFIX skosxl:	<http://www.w3.org/2008/05/skos-xl#>
 PREFIX esco:	<http://data.europa.eu/esco/model#>
 
-
-SELECT ?module ?method ?topic ?duration
+SELECT ?competention ?description
 WHERE {
-	?module ccso:lists ?topic .
-	?course ccso:hasSyllabus ?syll .
-	?syll ccso:coversTopic ?topic .
-	?te 	ccso:hasTopic ?topic ;
-			ccso:followsTEMethod ?method .
-	?topic ccso:duration ?duration .
-}
+	?competention a esco:Skill .
+	?competention skosxl:prefLabel ?label.
+	?label skosxl:literalForm ?description .
 
+}

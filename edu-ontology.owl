@@ -4,12 +4,15 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ccso: <https://w3id.org/ccso/ccso#> .
+@prefix esco: <http://data.europa.eu/esco/model#> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @base <http://agentlab.ru/2019/edu_ontology> .
 
 <http://agentlab.ru/2019/edu_ontology> rdf:type owl:Ontology ;
-                                        owl:imports <https://w3id.org/ccso/ccso> .
+                                        owl:imports <http://data.europa.eu/esco/model> ,
+                                                    <https://w3id.org/ccso/ccso> .
 
 #################################################################
 #    Classes
@@ -38,6 +41,51 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://agentlab.ru/2019/edu_ontology#a4c81ed3-1a76-488f-849a-509a49b25c9c
+:a4c81ed3-1a76-488f-849a-509a49b25c9c rdf:type owl:NamedIndividual ,
+                                               skosxl:Label ;
+                                      skosxl:literalForm "способность участвовать в работах по доводке и освоению информационных технологий в ходе внедрения и эксплуатации информационных систем"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#a8cf4055-0fe9-4487-8dc4-c558ba2280c3
+:a8cf4055-0fe9-4487-8dc4-c558ba2280c3 rdf:type owl:NamedIndividual ,
+                                               skosxl:Label ;
+                                      skosxl:literalForm "способность применять основные приемы и законы создания и чтения чертежей и документации по аппаратным и программным компонентам информационных систем"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#ad1a24a5-8f7b-4930-888f-f3c62d4d58f5
+:ad1a24a5-8f7b-4930-888f-f3c62d4d58f5 rdf:type owl:NamedIndividual ,
+                                               skosxl:Label ;
+                                      skosxl:literalForm """способность применять методы представления, преобразования и фильтрации информационных сигналов, технологии проводной и беспроводной передачи данных, методы модернизации и модификации аппаратных и аппаратно-программных компонентов информационных систем
+"""@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#ae9c305b-cacd-480d-815a-b196e2908a9c
+:ae9c305b-cacd-480d-815a-b196e2908a9c rdf:type owl:NamedIndividual ,
+                                               skosxl:Label ;
+                                      skosxl:literalForm """способность к инсталляции, отладке программных и настройке технических средств для ввода информационных систем в опытную и промышленную эксплуатацию
+"""@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#c9b3227e-82f6-41de-ab16-ae3fa142331f
+:c9b3227e-82f6-41de-ab16-ae3fa142331f rdf:type owl:NamedIndividual ,
+                                               skosxl:Label ;
+                                      skosxl:literalForm "способность выбирать и оценивать способ реализации информационных систем и устройств (программно-, аппаратно- или программно-аппаратно) для решения поставленной задачи"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#e7ba0344-62fb-4af2-9baa-3bb30c75c847
+:e7ba0344-62fb-4af2-9baa-3bb30c75c847 rdf:type owl:NamedIndividual ,
+                                               skosxl:Label ;
+                                      skosxl:literalForm "способность оценивать надежность и качество функционирования объекта проектирования"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#f39d8079-fa96-4793-b668-b059bad2ff0e
+:f39d8079-fa96-4793-b668-b059bad2ff0e rdf:type owl:NamedIndividual ,
+                                               skosxl:Label ;
+                                      skosxl:literalForm """способность адаптировать приложения к изменяющимся
+условиям функционирования"""@ru .
+
 
 ###  http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.
 <http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.> rdf:type owl:NamedIndividual ,
@@ -196,6 +244,103 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
          ccso:duration "PT2H"^^xsd:duration .
 
 
+###  http://agentlab.ru/2019/edu_ontology#СОК-10
+:СОК-10 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#418a5c8c-be5e-4ec9-8258-b46386e603ff> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СОК-10-know
+:СОК-10-know rdf:type owl:NamedIndividual ,
+                      esco:Skill ;
+             skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#921fd306-e804-4820-a705-aeed1b593188> ;
+			 esco:skillType          <http://data.europa.eu/esco/skill-type/knowledge> ;.
+
+
+###  http://agentlab.ru/2019/edu_ontology#СОК-13
+:СОК-13 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#9cc0e6a0-3078-4de6-b346-9a5be8e173ce> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СОПК-5
+:СОПК-5 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#2be1a8ad-70db-4dcf-a54d-e9a42b88d77c> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СОПК-6
+:СОПК-6 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel :c9b3227e-82f6-41de-ab16-ae3fa142331f .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-1
+:СПК-1 rdf:type owl:NamedIndividual ,
+                esco:Skill ;
+       skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#7778e6f5-1ba8-4271-99aa-fea0e8ecc119> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-11
+:СПК-11 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#90c8f8f1-f247-4e4a-99d2-9042aeeb93af> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-13
+:СПК-13 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel :ad1a24a5-8f7b-4930-888f-f3c62d4d58f5 .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-15
+:СПК-15 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#16f3ccde-8be0-4d7c-af7f-9ea41ea48c58> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-18
+:СПК-18 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel :a4c81ed3-1a76-488f-849a-509a49b25c9c .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-19
+:СПК-19 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#7de09273-1df6-47db-8f57-3b9d7c69aac1> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-25
+:СПК-25 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#4404d099-15d6-469f-ae6b-23a706cff210> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-37
+:СПК-37 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel :ae9c305b-cacd-480d-815a-b196e2908a9c .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-39
+:СПК-39 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel :a8cf4055-0fe9-4487-8dc4-c558ba2280c3 .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-45
+:СПК-45 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel :f39d8079-fa96-4793-b668-b059bad2ff0e .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СПК-6
+:СПК-6 rdf:type owl:NamedIndividual ,
+                esco:Skill ;
+       skosxl:prefLabel :e7ba0344-62fb-4af2-9baa-3bb30c75c847 .
+
+
 ###  http://agentlab.ru/2019/edu_ontology#Семинар_С1.1
 :Семинар_С1.1 rdf:type owl:NamedIndividual ,
                        ccso:TeachingEvent ;
@@ -215,6 +360,60 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                        ccso:TeachingEvent ;
               ccso:followsTEMethod ccso:Seminar ;
               ccso:hasTopic :Обработка_прерываний_на_ассемблере_микропроцессора_i8086 .
+
+
+###  http://agentlab.ru/2019/edu_ontology#16f3ccde-8be0-4d7c-af7f-9ea41ea48c58
+<http://agentlab.ru/2019/edu_ontology#16f3ccde-8be0-4d7c-af7f-9ea41ea48c58> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "способность разрабатывать средства реализации информационных технологий (методические, информационные, математические, алгоритмические, технические и программные)"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#2be1a8ad-70db-4dcf-a54d-e9a42b88d77c
+<http://agentlab.ru/2019/edu_ontology#2be1a8ad-70db-4dcf-a54d-e9a42b88d77c> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "способность использовать современные компьютерные технологии поиска информации для решения поставленной задачи, критического анализа этой информации и обоснования принятых идей и подходов к решению"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#418a5c8c-be5e-4ec9-8258-b46386e603ff
+<http://agentlab.ru/2019/edu_ontology#418a5c8c-be5e-4ec9-8258-b46386e603ff> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "способность выстраивать логику рассуждений и высказываний, проводить анализ, систематизацию, классификацию, интерпретацию соответствующей информации, формулировать выводы, адекватные полученным результатам"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#4404d099-15d6-469f-ae6b-23a706cff210
+<http://agentlab.ru/2019/edu_ontology#4404d099-15d6-469f-ae6b-23a706cff210> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "способность проводить оценку производственных и непроизводственных затрат на обеспечение качества объекта проектирования"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#7de09273-1df6-47db-8f57-3b9d7c69aac1
+<http://agentlab.ru/2019/edu_ontology#7de09273-1df6-47db-8f57-3b9d7c69aac1> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "способность проводить подготовку документации по менеджменту качества информационных технологий"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#7778e6f5-1ba8-4271-99aa-fea0e8ecc119
+<http://agentlab.ru/2019/edu_ontology#7778e6f5-1ba8-4271-99aa-fea0e8ecc119> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "способность проводить предпроектное обследование объекта проектирования, системный анализ предметной области, их взаимосвязей"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#9cc0e6a0-3078-4de6-b346-9a5be8e173ce
+<http://agentlab.ru/2019/edu_ontology#9cc0e6a0-3078-4de6-b346-9a5be8e173ce> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "способность к самостоятельному выбору способа решения проблемы из альтернативных вариантов на основе выявления и устранения противоречий в системе"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#90c8f8f1-f247-4e4a-99d2-9042aeeb93af
+<http://agentlab.ru/2019/edu_ontology#90c8f8f1-f247-4e4a-99d2-9042aeeb93af> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "способность применять знания по информационным процессам, технологиям и системам к проектированию информационных процессов, технологий и систем"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#921fd306-e804-4820-a705-aeed1b593188
+<http://agentlab.ru/2019/edu_ontology#921fd306-e804-4820-a705-aeed1b593188> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "группы команд изучаемых микропроцессоров, их основное назначение"@ru .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.
@@ -247,3 +446,55 @@ ccso:Student rdfs:label "Студент"@ru .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+
+
+###  http://agentlab.ru/2019/edu_ontology#СОК-10-know
+:СОК-10-able rdf:type owl:NamedIndividual ,
+                      esco:Skill ;
+             skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#2e0d96a9-dd50-471c-a9eb-69eb5b9268e7> ;
+			 esco:skillType          <http://data.europa.eu/esco/skill-type/knowledge> ;.
+
+<http://agentlab.ru/2019/edu_ontology#2e0d96a9-dd50-471c-a9eb-69eb5b9268e7> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "составлять программу вычислений, используя заданную систему команд микропроцессора"@ru .
+
+###  http://agentlab.ru/2019/edu_ontology#СОК-10-know
+:СОК-10-own rdf:type owl:NamedIndividual ,
+                      esco:Skill ;
+             skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#02524842-5000-4209-a662-09eb85ce0fb6> ;
+			 esco:skillType          <http://data.europa.eu/esco/skill-type/knowledge> ;.
+
+<http://agentlab.ru/2019/edu_ontology#02524842-5000-4209-a662-09eb85ce0fb6> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "навыками сравнения и выделения конкурентных преимуществ разных архитектур микропроцессоров"@ru .
+
+																			###  http://agentlab.ru/2019/edu_ontology#СОК-10-know
+:СОК-11-know rdf:type owl:NamedIndividual ,
+                      esco:Skill ;
+             skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#0a86ea88-04c7-4827-825c-279733a4f777> ;
+			 esco:skillType          <http://data.europa.eu/esco/skill-type/knowledge> ;.
+
+<http://agentlab.ru/2019/edu_ontology#0a86ea88-04c7-4827-825c-279733a4f777> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "преимущества использования механизма прерываний для организации ввода-вывода в микропроцессорной системе"@ru .
+
+
+																			###  http://agentlab.ru/2019/edu_ontology#СОК-10-know
+:СОК-11-able rdf:type owl:NamedIndividual ,
+                      esco:Skill ;
+             skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#4c0b28a7-6d05-4109-b053-5eee087f163c> ;
+			 esco:skillType          <http://data.europa.eu/esco/skill-type/knowledge> ;.
+
+<http://agentlab.ru/2019/edu_ontology#4c0b28a7-6d05-4109-b053-5eee087f163c> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "разрабатывать программы, модифицирующие собственный код, для сокращения объема программы"@ru .
+
+																			###  http://agentlab.ru/2019/edu_ontology#СОК-10-know
+:СОК-11-own rdf:type owl:NamedIndividual ,
+                      esco:Skill ;
+             skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#f9b699a9-8f65-4ef8-9855-45fe767d67db> ;
+			 esco:skillType          <http://data.europa.eu/esco/skill-type/knowledge> ;.
+
+<http://agentlab.ru/2019/edu_ontology#f9b699a9-8f65-4ef8-9855-45fe767d67db> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "навыками изучения документации по микропроцессорной технике"@ru .
