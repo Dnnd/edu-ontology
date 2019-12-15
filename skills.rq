@@ -9,7 +9,7 @@ PREFIX ccso:	<https://w3id.org/ccso/ccso#>
 PREFIX skosxl:	<http://www.w3.org/2008/05/skos-xl#>
 PREFIX esco:	<http://data.europa.eu/esco/model#>
 
-SELECT ?code ?competence ?level ?descriptor
+SELECT ?syllabus_ ?code ?competence ?level ?descriptor
 WHERE {
 	?suos_competence_ 	a esco:Skill ;
 						skosxl:prefLabel ?label_ .
@@ -21,11 +21,12 @@ WHERE {
 				esco:skillType ?type ;
 				skosxl:prefLabel ?descr_label_ .
 	?descr_label_ skosxl:literalForm ?descriptor .
+	?syllabus_ ccso:aimsToLO ?suos_competence_.
 	
-	VALUES (?level ?type) {		# В теории можно задать это в модели
+    VALUES (?level ?type) {		# В теории можно задать это в модели
             ( "знать" <http://data.europa.eu/esco/skill-type/knowledge> )
             ( "уметь" <http://data.europa.eu/esco/skill-type/skill> )
-			( "владеть" <http://data.europa.eu/esco/skill-type/competence> )
+            ( "владеть" :application)
 	}
 }
 ORDER BY ?code

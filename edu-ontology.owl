@@ -30,11 +30,23 @@ skosxl:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://agentlab.ru/2019/edu_ontology#follows
+:follows rdf:type owl:ObjectProperty ;
+         rdfs:domain ccso:Topic ;
+         rdfs:range ccso:Topic .
+
+
 ###  http://agentlab.ru/2019/edu_ontology#hasSkill
 :hasSkill rdf:type owl:ObjectProperty ;
           rdfs:domain :SUOS ;
           rdfs:range esco:Skill ;
           rdfs:comment "СУОС содержит результат освоения программы"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#preceeds
+:preceeds rdf:type owl:ObjectProperty ;
+          rdfs:domain ccso:Topic ;
+          rdfs:range ccso:Topic .
 
 
 ###  https://w3id.org/ccso/ccso#lists
@@ -115,6 +127,10 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                                                skosxl:Label ;
                                       skosxl:literalForm """способность к инсталляции, отладке программных и настройке технических средств для ввода информационных систем в опытную и промышленную эксплуатацию
 """@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#application
+:application rdf:type owl:NamedIndividual .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#c9b3227e-82f6-41de-ab16-ae3fa142331f
@@ -271,6 +287,7 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                                                          :Основы_цифровой_схемотехники ,
                                                          <http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.> ,
                                                          <http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.> ,
+                                                         :СОК-11 ,
                                                          :СОК-13 ,
                                                          :СОПК-5 ,
                                                          :СПК-11 ,
@@ -412,16 +429,21 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 ###  http://agentlab.ru/2019/edu_ontology#РПД_АИС
 :РПД_АИС rdf:type owl:NamedIndividual ,
                   ccso:Syllabus ;
-         ccso:coversTopic <http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.> ,
-                          <http://agentlab.ru/2019/edu_ontology#Архитектура_микропроцессора_i8086._Система_команд.> ,
-                          :Вычисления_и_работа_с_памятью_на_ассемблере_микропроцессора_i8086 ,
-                          :Обработка_прерываний_на_ассемблере_микропроцессора_i8086 ,
-                          <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_контроллере_прерываний._Обмен_сигналами_между_контроллером_прерываний_и_процессором.> ,
-                          <http://agentlab.ru/2019/edu_ontology#Обработка_прерывания_в_процессоре._Таблица_векторов_прерываний.> ,
-                          :Основы_цифровой_схемотехники ,
-                          <http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.> ,
-                          <http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.> ,
-                          <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> ;
+         ccso:aimsToLO :СОК-10 ,
+                       :СОК-11 ,
+                       :СОК-13 ,
+                       :СОПК-5 ,
+                       :СОПК-6 ,
+                       :СПК-1 ,
+                       :СПК-11 ,
+                       :СПК-13 ,
+                       :СПК-15 ,
+                       :СПК-18 ,
+                       :СПК-19 ,
+                       :СПК-25 ,
+                       :СПК-37 ,
+                       :СПК-39 ,
+                       :СПК-45 ;
          ccso:duration "PT2H"^^xsd:duration .
 
 
@@ -451,7 +473,7 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 :СОК-10-own rdf:type owl:NamedIndividual ,
                      esco:Skill ;
             esco:isOptionalSkillFor :СОК-10 ;
-            esco:skillType <http://data.europa.eu/esco/skill-type/competence> ;
+            esco:skillType :application ;
             skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#02524842-5000-4209-a662-09eb85ce0fb6> .
 
 
@@ -481,7 +503,7 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 :СОК-11-own rdf:type owl:NamedIndividual ,
                      esco:Skill ;
             esco:isOptionalSkillFor :СОК-11 ;
-            esco:skillType <http://data.europa.eu/esco/skill-type/competence> ;
+            esco:skillType :application ;
             skosxl:prefLabel :f9b699a9-8f65-4ef8-9855-45fe767d67db .
 
 
@@ -689,8 +711,7 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 
 
 ###  http://data.europa.eu/esco/skill-type/skill
-<http://data.europa.eu/esco/skill-type/skill> rdf:type owl:NamedIndividual ;
-                                              esco:isOptionalSkillFor :СОК-11 .
+<http://data.europa.eu/esco/skill-type/skill> rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/ccso/ccso#Lecture
