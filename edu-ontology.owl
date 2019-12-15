@@ -15,8 +15,52 @@
                                                     <https://w3id.org/ccso/ccso> .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2008/05/skos-xl#literalForm
+skosxl:literalForm rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2008/05/skos-xl#prefLabel
+skosxl:prefLabel rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://agentlab.ru/2019/edu_ontology#hasSkill
+:hasSkill rdf:type owl:ObjectProperty ;
+          rdfs:domain :SUOS ;
+          rdfs:range esco:Skill ;
+          rdfs:comment "СУОС содержит результат освоения программы"@ru .
+
+
+###  https://w3id.org/ccso/ccso#lists
+ccso:lists rdfs:range esco:Skill .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://agentlab.ru/2019/edu_ontology#hasCode
+:hasCode rdf:type owl:DatatypeProperty ;
+         rdfs:domain :SUOS ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Каждый СУОС имеет шифр"@ru .
+
+
+#################################################################
 #    Classes
 #################################################################
+
+###  http://agentlab.ru/2019/edu_ontology#SUOS
+:SUOS rdf:type owl:Class ;
+      rdfs:comment "Самостоятельно устанавливаемые образовательные стандарты"@ru ;
+      rdfs:label "СУОС"@ru .
+
 
 ###  https://w3id.org/ccso/ccso#Course
 ccso:Course rdfs:label "Курс"@ru .
@@ -93,6 +137,105 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                                       skosxl:literalForm "навыками изучения документации по микропроцессорной технике"@ru .
 
 
+###  http://agentlab.ru/2019/edu_ontology#suos-СОК-10
+:suos-СОК-10 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasSkill :СОК-10 ;
+             :hasCode "СОК-10"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СОК-11
+:suos-СОК-11 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasSkill :СОК-11 ;
+             :hasCode "СОК-11"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СОК-13
+:suos-СОК-13 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasSkill :СОК-13 ;
+             :hasCode "СОК-13"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СОПК-5
+:suos-СОПК-5 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СОПК-5"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СОПК-6
+:suos-СОПК-6 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СОПК-6"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-1
+:suos-СПК-1 rdf:type owl:NamedIndividual ,
+                     :SUOS ;
+            :hasCode "СПК-1"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-11
+:suos-СПК-11 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СПК-11"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-13
+:suos-СПК-13 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СПК-13"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-15
+:suos-СПК-15 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СПК-15"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-18
+:suos-СПК-18 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СПК-18"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-19
+:suos-СПК-19 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СПК-19"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-25
+:suos-СПК-25 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СПК-25"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-37
+:suos-СПК-37 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СПК-37"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-39
+:suos-СПК-39 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СПК-39"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-45
+:suos-СПК-45 rdf:type owl:NamedIndividual ,
+                      :SUOS ;
+             :hasCode "СПК-45"^^xsd:string .
+
+
+###  http://agentlab.ru/2019/edu_ontology#suos-СПК-6
+:suos-СПК-6 rdf:type owl:NamedIndividual ,
+                     :SUOS ;
+            :hasCode "СПК-6"^^xsd:string .
+
+
 ###  http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.
 <http://agentlab.ru/2019/edu_ontology#Арбитр_приоритетов._Вложенные_прерывания.> rdf:type owl:NamedIndividual ,
                                                                                           ccso:Topic ;
@@ -123,6 +266,12 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                                                          :Основы_цифровой_схемотехники ,
                                                          <http://agentlab.ru/2019/edu_ontology#Программирование_на_языке_ассемблера_i8086._Директивы.> ,
                                                          <http://agentlab.ru/2019/edu_ontology#Программируемый_контроллер_прерываний_i8259A._Состав_и_назначение_основных_элементов.> ,
+                                                         :СОК-13 ,
+                                                         :СОПК-5 ,
+                                                         :СПК-11 ,
+                                                         :СПК-19 ,
+                                                         :СПК-39 ,
+                                                         :СПК-6 ,
                                                          <http://agentlab.ru/2019/edu_ontology#Программные,_аппаратные_и_внутренние_прерывания._Средства_подсистемы_прерываний.> .
 
 
@@ -207,12 +356,33 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 ###  http://agentlab.ru/2019/edu_ontology#Организация_памяти_информационных_систем
 :Организация_памяти_информационных_систем rdf:type owl:NamedIndividual ,
                                                    ccso:KnowledgeUnit ;
+                                          ccso:lists :СОК-11 ,
+                                                     :СОПК-5 ,
+                                                     :СПК-1 ,
+                                                     :СПК-11 ,
+                                                     :СПК-13 ,
+                                                     :СПК-18 ,
+                                                     :СПК-19 ,
+                                                     :СПК-25 ,
+                                                     :СПК-37 ,
+                                                     :СПК-45 ,
+                                                     :СПК-6 ;
                                           ccso:duration "PT2H"^^xsd:duration .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#Организация_параллельных_вычислений
 :Организация_параллельных_вычислений rdf:type owl:NamedIndividual ,
                                               ccso:KnowledgeUnit ;
+                                     ccso:lists :СОК-10 ,
+                                                :СОК-13 ,
+                                                :СОПК-5 ,
+                                                :СОПК-6 ,
+                                                :СПК-11 ,
+                                                :СПК-13 ,
+                                                :СПК-18 ,
+                                                :СПК-19 ,
+                                                :СПК-37 ,
+                                                :СПК-45 ;
                                      ccso:duration "PT2H"^^xsd:duration .
 
 
@@ -255,10 +425,6 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                  esco:Skill ;
         skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#418a5c8c-be5e-4ec9-8258-b46386e603ff> .
 
-:СОК-11 rdf:type owl:NamedIndividual ,
-                 esco:Skill ;
-        skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#6a854e6e-aef7-44cb-8778-22c41827abfd> .
-
 
 ###  http://agentlab.ru/2019/edu_ontology#СОК-10-able
 :СОК-10-able rdf:type owl:NamedIndividual ,
@@ -282,6 +448,12 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
             esco:isOptionalSkillFor :СОК-10 ;
             esco:skillType <http://data.europa.eu/esco/skill-type/knowledge> ;
             skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#02524842-5000-4209-a662-09eb85ce0fb6> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#СОК-11
+:СОК-11 rdf:type owl:NamedIndividual ,
+                 esco:Skill ;
+        skosxl:prefLabel <http://agentlab.ru/2019/edu_ontology#6a854e6e-aef7-44cb-8778-22c41827abfd> .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#СОК-11-able
@@ -451,15 +623,17 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                                                                                      skosxl:Label ;
                                                                             skosxl:literalForm "способность выстраивать логику рассуждений и высказываний, проводить анализ, систематизацию, классификацию, интерпретацию соответствующей информации, формулировать выводы, адекватные полученным результатам"@ru .
 
-<http://agentlab.ru/2019/edu_ontology#6a854e6e-aef7-44cb-8778-22c41827abfd> rdf:type owl:NamedIndividual ,
-                                                                                     skosxl:Label ;
-                                                                            skosxl:literalForm "способность анализировать и оценивать уровни своих компетенций, владение способами приобретения и извлечения знаний, осуществления самостоятельной учебно-познавательной деятельности, выбора наиболее эффективных способов и алгоритмов решения задач в зависимости от конкретных условий"@ru .
-
 
 ###  http://agentlab.ru/2019/edu_ontology#4404d099-15d6-469f-ae6b-23a706cff210
 <http://agentlab.ru/2019/edu_ontology#4404d099-15d6-469f-ae6b-23a706cff210> rdf:type owl:NamedIndividual ,
                                                                                      skosxl:Label ;
                                                                             skosxl:literalForm "способность проводить оценку производственных и непроизводственных затрат на обеспечение качества объекта проектирования"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#6a854e6e-aef7-44cb-8778-22c41827abfd
+<http://agentlab.ru/2019/edu_ontology#6a854e6e-aef7-44cb-8778-22c41827abfd> rdf:type owl:NamedIndividual ,
+                                                                                     skosxl:Label ;
+                                                                            skosxl:literalForm "способность анализировать и оценивать уровни своих компетенций, владение способами приобретения и извлечения знаний, осуществления самостоятельной учебно-познавательной деятельности, выбора наиболее эффективных способов и алгоритмов решения задач в зависимости от конкретных условий"@ru .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#7de09273-1df6-47db-8f57-3b9d7c69aac1
