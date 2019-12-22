@@ -13,6 +13,7 @@
 <http://agentlab.ru/2019/edu_ontology> rdf:type owl:Ontology ;
                                         owl:imports <http://data.15926.org/dm/> ,
                                                     <http://data.europa.eu/esco/model> ,
+                                                    <http://www.w3.org/2008/05/skos> ,
                                                     <https://w3id.org/ccso/ccso> .
 
 #################################################################
@@ -137,7 +138,8 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#application
-:application rdf:type owl:NamedIndividual .
+:application rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/2008/05/skos#Concept> .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#c9b3227e-82f6-41de-ab16-ae3fa142331f
