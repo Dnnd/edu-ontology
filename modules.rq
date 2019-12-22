@@ -10,11 +10,17 @@ PREFIX skosxl:	<http://www.w3.org/2008/05/skos-xl#>
 PREFIX esco:	<http://data.europa.eu/esco/model#>
 
 
-SELECT ?module ?method ?topic ?duration
+SELECT ?syll ?module ?method ?topic ?duration
 WHERE {
-	?module ccso:lists ?topic .
+	?module a ccso:KnowledgeUnit ;
+			ccso:lists ?topic .
+
+	?syll 	a ccso:Syllabus ;
+			:consistsOfModules ?module .
+
 	?te 	ccso:hasTopic ?topic ;
 			ccso:followsTEMethod ?method .
+
 	?topic ccso:duration ?duration .
 }
 

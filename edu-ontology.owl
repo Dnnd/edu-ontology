@@ -30,6 +30,12 @@ skosxl:prefLabel rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://agentlab.ru/2019/edu_ontology#consistsOfModules
+:consistsOfModules rdf:type owl:ObjectProperty ;
+                   rdfs:domain ccso:Syllabus ;
+                   rdfs:range ccso:KnowledgeUnit .
+
+
 ###  http://agentlab.ru/2019/edu_ontology#follows
 :follows rdf:type owl:ObjectProperty ;
          rdfs:domain ccso:Topic ;
@@ -429,6 +435,9 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 ###  http://agentlab.ru/2019/edu_ontology#РПД_АИС
 :РПД_АИС rdf:type owl:NamedIndividual ,
                   ccso:Syllabus ;
+         :consistsOfModules :Введение_в_архитектуру_информационных_систем ,
+                            :Организация_памяти_информационных_систем ,
+                            :Организация_параллельных_вычислений ;
          ccso:aimsToLO :СОК-10 ,
                        :СОК-11 ,
                        :СОК-13 ,
