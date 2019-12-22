@@ -11,7 +11,8 @@
 @base <http://agentlab.ru/2019/edu_ontology> .
 
 <http://agentlab.ru/2019/edu_ontology> rdf:type owl:Ontology ;
-                                        owl:imports <http://data.europa.eu/esco/model> ,
+                                        owl:imports <http://data.15926.org/dm/> ,
+                                                    <http://data.europa.eu/esco/model> ,
                                                     <https://w3id.org/ccso/ccso> .
 
 #################################################################
