@@ -57,6 +57,12 @@ skosxl:prefLabel rdf:type owl:AnnotationProperty .
           rdfs:range ccso:Topic .
 
 
+###  http://agentlab.ru/2019/edu_ontology#representsTE
+:representsTE rdf:type owl:ObjectProperty ;
+              rdfs:domain :StudiyingProcess ;
+              rdfs:range ccso:TeachingEvent .
+
+
 ###  https://w3id.org/ccso/ccso#lists
 ccso:lists rdfs:range esco:Skill .
 
@@ -76,10 +82,25 @@ ccso:lists rdfs:range esco:Skill .
 #    Classes
 #################################################################
 
+###  http://agentlab.ru/2019/edu_ontology#Classroom
+:Classroom rdf:type owl:Class ;
+           rdfs:subClassOf <http://data.15926.org/dm/SpatialLocation> .
+
+
 ###  http://agentlab.ru/2019/edu_ontology#SUOS
 :SUOS rdf:type owl:Class ;
       rdfs:comment "Самостоятельно устанавливаемые образовательные стандарты"@ru ;
       rdfs:label "СУОС"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#StudiyingProcess
+:StudiyingProcess rdf:type owl:Class ;
+                  rdfs:subClassOf <http://data.15926.org/dm/Activity> ;
+                  rdfs:label "Учебный процесс"@ru .
+
+
+###  https://w3id.org/ccso/ccso#AcademicStaff
+ccso:AcademicStaff rdfs:subClassOf <http://data.15926.org/dm/PossibleIndividual> .
 
 
 ###  https://w3id.org/ccso/ccso#Course
@@ -99,6 +120,11 @@ ccso:LearningOutcome rdfs:subClassOf esco:Skill ;
 ccso:Lecturer rdfs:label "Лектор"@ru .
 
 
+###  https://w3id.org/ccso/ccso#Student
+ccso:Student rdfs:subClassOf <http://data.15926.org/dm/PossibleIndividual> ;
+             rdfs:label "Студент"@ru .
+
+
 ###  https://w3id.org/ccso/ccso#Syllabus
 ccso:Syllabus rdfs:label "Учебный план"@ru .
 
@@ -110,6 +136,26 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://agentlab.ru/2019/edu_ontology#Alexeev_Ivan
+:Alexeev_Ivan rdf:type owl:NamedIndividual ,
+                       ccso:Student .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Ivanov_Alex
+:Ivanov_Alex rdf:type owl:NamedIndividual ,
+                      ccso:Student .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Lych_on_Lec
+:Lych_on_Lec rdf:type owl:NamedIndividual ,
+                      ccso:Lecturer .
+
+
+###  http://agentlab.ru/2019/edu_ontology#Lych_on_Sem
+:Lych_on_Sem rdf:type owl:NamedIndividual ,
+                      ccso:Lecturer .
+
 
 ###  http://agentlab.ru/2019/edu_ontology#a4c81ed3-1a76-488f-849a-509a49b25c9c
 :a4c81ed3-1a76-488f-849a-509a49b25c9c rdf:type owl:NamedIndividual ,
@@ -142,6 +188,40 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                       <http://www.w3.org/2008/05/skos#Concept> .
 
 
+###  http://agentlab.ru/2019/edu_ontology#beg_lec
+:beg_lec rdf:type owl:NamedIndividual ,
+                  <http://data.15926.org/dm/Beginning> ;
+         <http://data.15926.org/dm/hasPart> <http://agentlab.ru/2019/edu_ontology#830> ;
+         <http://data.15926.org/dm/hasWhole> :c962ad08-874d-491b-ae59-cb95561ec1cb .
+
+
+###  http://agentlab.ru/2019/edu_ontology#beg_lych_on_lec
+:beg_lych_on_lec rdf:type owl:NamedIndividual ,
+                          <http://data.15926.org/dm/Beginning> ;
+                 <http://data.15926.org/dm/hasPart> <http://agentlab.ru/2019/edu_ontology#830> ;
+                 <http://data.15926.org/dm/hasWhole> :Lych_on_Lec .
+
+
+###  http://agentlab.ru/2019/edu_ontology#beg_lych_on_sem
+:beg_lych_on_sem rdf:type owl:NamedIndividual ,
+                          <http://data.15926.org/dm/Beginning> ;
+                 <http://data.15926.org/dm/hasPart> <http://agentlab.ru/2019/edu_ontology#830> ;
+                 <http://data.15926.org/dm/hasWhole> :Lych_on_Sem .
+
+
+###  http://agentlab.ru/2019/edu_ontology#beg_sem
+:beg_sem rdf:type owl:NamedIndividual ,
+                  <http://data.15926.org/dm/Beginning> ;
+         <http://data.15926.org/dm/hasPart> <http://agentlab.ru/2019/edu_ontology#830> ;
+         <http://data.15926.org/dm/hasWhole> <http://agentlab.ru/2019/edu_ontology#60d791b6-fe61-4ae9-a2d1-48585b450969> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#c962ad08-874d-491b-ae59-cb95561ec1cb
+:c962ad08-874d-491b-ae59-cb95561ec1cb rdf:type owl:NamedIndividual ,
+                                               :StudiyingProcess ;
+                                      :representsTE :Лекция_1.1 .
+
+
 ###  http://agentlab.ru/2019/edu_ontology#c9b3227e-82f6-41de-ab16-ae3fa142331f
 :c9b3227e-82f6-41de-ab16-ae3fa142331f rdf:type owl:NamedIndividual ,
                                                skosxl:Label ;
@@ -152,6 +232,34 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 :e7ba0344-62fb-4af2-9baa-3bb30c75c847 rdf:type owl:NamedIndividual ,
                                                skosxl:Label ;
                                       skosxl:literalForm "способность оценивать надежность и качество функционирования объекта проектирования"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#end_lec
+:end_lec rdf:type owl:NamedIndividual ,
+                  <http://data.15926.org/dm/Ending> ;
+         <http://data.15926.org/dm/hasPart> <http://agentlab.ru/2019/edu_ontology#1015> ;
+         <http://data.15926.org/dm/hasWhole> :c962ad08-874d-491b-ae59-cb95561ec1cb .
+
+
+###  http://agentlab.ru/2019/edu_ontology#end_lych_on_lec
+:end_lych_on_lec rdf:type owl:NamedIndividual ,
+                          <http://data.15926.org/dm/Ending> ;
+                 <http://data.15926.org/dm/hasPart> <http://agentlab.ru/2019/edu_ontology#1015> ;
+                 <http://data.15926.org/dm/hasWhole> :Lych_on_Lec .
+
+
+###  http://agentlab.ru/2019/edu_ontology#end_lych_on_sem
+:end_lych_on_sem rdf:type owl:NamedIndividual ,
+                          <http://data.15926.org/dm/Ending> ;
+                 <http://data.15926.org/dm/hasPart> <http://agentlab.ru/2019/edu_ontology#1015> ;
+                 <http://data.15926.org/dm/hasWhole> :Lych_on_Sem .
+
+
+###  http://agentlab.ru/2019/edu_ontology#end_sem
+:end_sem rdf:type owl:NamedIndividual ,
+                  <http://data.15926.org/dm/Ending> ;
+         <http://data.15926.org/dm/hasPart> <http://agentlab.ru/2019/edu_ontology#1015> ;
+         <http://data.15926.org/dm/hasWhole> <http://agentlab.ru/2019/edu_ontology#60d791b6-fe61-4ae9-a2d1-48585b450969> .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#f39d8079-fa96-4793-b668-b059bad2ff0e
@@ -165,6 +273,34 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 :f9b699a9-8f65-4ef8-9855-45fe767d67db rdf:type owl:NamedIndividual ,
                                                skosxl:Label ;
                                       skosxl:literalForm "навыками изучения документации по микропроцессорной технике"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#lych_lych_lec
+:lych_lych_lec rdf:type owl:NamedIndividual ,
+                        <http://data.15926.org/dm/TemporalWholePart> ;
+               <http://data.15926.org/dm/hasPart> :Lych_on_Lec ;
+               <http://data.15926.org/dm/hasWhole> :Лычков_Игорь_Игоревич .
+
+
+###  http://agentlab.ru/2019/edu_ontology#lych_lych_sem
+:lych_lych_sem rdf:type owl:NamedIndividual ,
+                        <http://data.15926.org/dm/TemporalWholePart> ;
+               <http://data.15926.org/dm/hasPart> :Lych_on_Sem ;
+               <http://data.15926.org/dm/hasWhole> :Лычков_Игорь_Игоревич .
+
+
+###  http://agentlab.ru/2019/edu_ontology#part_lych_lec
+:part_lych_lec rdf:type owl:NamedIndividual ,
+                        <http://data.15926.org/dm/Participation> ;
+               <http://data.15926.org/dm/hasPart> :Lych_on_Lec ;
+               <http://data.15926.org/dm/hasWhole> :c962ad08-874d-491b-ae59-cb95561ec1cb .
+
+
+###  http://agentlab.ru/2019/edu_ontology#part_lych_sem
+:part_lych_sem rdf:type owl:NamedIndividual ,
+                        <http://data.15926.org/dm/Participation> ;
+               <http://data.15926.org/dm/hasPart> :Lych_on_Sem ;
+               <http://data.15926.org/dm/hasWhole> <http://agentlab.ru/2019/edu_ontology#60d791b6-fe61-4ae9-a2d1-48585b450969> .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#suos-СОК-10
@@ -636,6 +772,18 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                                                                             skosxl:literalForm "навыками сравнения и выделения конкурентных преимуществ разных архитектур микропроцессоров"@ru .
 
 
+###  http://agentlab.ru/2019/edu_ontology#1015
+<http://agentlab.ru/2019/edu_ontology#1015> rdf:type owl:NamedIndividual ,
+                                                     <http://data.15926.org/dm/PointInTime> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#1015_
+<http://agentlab.ru/2019/edu_ontology#1015_> rdf:type owl:NamedIndividual ,
+                                                      <http://data.15926.org/dm/ClassOfRepresentationOfThing> ;
+                                             <http://data.15926.org/dm/hasPattern> <http://agentlab.ru/2019/edu_ontology#2019_09_01T10:15> ;
+                                             <http://data.15926.org/dm/hasRepresented> <http://agentlab.ru/2019/edu_ontology#1015> .
+
+
 ###  http://agentlab.ru/2019/edu_ontology#16f3ccde-8be0-4d7c-af7f-9ea41ea48c58
 <http://agentlab.ru/2019/edu_ontology#16f3ccde-8be0-4d7c-af7f-9ea41ea48c58> rdf:type owl:NamedIndividual ,
                                                                                      skosxl:Label ;
@@ -652,6 +800,26 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 <http://agentlab.ru/2019/edu_ontology#2e0d96a9-dd50-471c-a9eb-69eb5b9268e7> rdf:type owl:NamedIndividual ,
                                                                                      skosxl:Label ;
                                                                             skosxl:literalForm "составлять программу вычислений, используя заданную систему команд микропроцессора"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#2019_09_01T10:15
+<http://agentlab.ru/2019/edu_ontology#2019_09_01T10:15> rdf:type owl:NamedIndividual ,
+                                                                 <http://data.15926.org/dm/RepresentationOfGregorianDateAndUtcTime> ;
+                                                        <http://data.15926.org/dm/hasDay> 1 ;
+                                                        <http://data.15926.org/dm/hasHour> 10 ;
+                                                        <http://data.15926.org/dm/hasMinute> 15 ;
+                                                        <http://data.15926.org/dm/hasMonth> 09 ;
+                                                        <http://data.15926.org/dm/hasYear> 2019 .
+
+
+###  http://agentlab.ru/2019/edu_ontology#2019_09_01T8:30
+<http://agentlab.ru/2019/edu_ontology#2019_09_01T8:30> rdf:type owl:NamedIndividual ,
+                                                                <http://data.15926.org/dm/RepresentationOfGregorianDateAndUtcTime> ;
+                                                       <http://data.15926.org/dm/hasDay> 1 ;
+                                                       <http://data.15926.org/dm/hasHour> 8 ;
+                                                       <http://data.15926.org/dm/hasMinute> 30 ;
+                                                       <http://data.15926.org/dm/hasMonth> 9 ;
+                                                       <http://data.15926.org/dm/hasYear> 2019 .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#4c0b28a7-6d05-4109-b053-5eee087f163c
@@ -672,10 +840,26 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
                                                                             skosxl:literalForm "способность проводить оценку производственных и непроизводственных затрат на обеспечение качества объекта проектирования"@ru .
 
 
+###  http://agentlab.ru/2019/edu_ontology#502u
+<http://agentlab.ru/2019/edu_ontology#502u> rdf:type owl:NamedIndividual ,
+                                                     :Classroom .
+
+
+###  http://agentlab.ru/2019/edu_ontology#511u
+<http://agentlab.ru/2019/edu_ontology#511u> rdf:type owl:NamedIndividual ,
+                                                     :Classroom .
+
+
 ###  http://agentlab.ru/2019/edu_ontology#6a854e6e-aef7-44cb-8778-22c41827abfd
 <http://agentlab.ru/2019/edu_ontology#6a854e6e-aef7-44cb-8778-22c41827abfd> rdf:type owl:NamedIndividual ,
                                                                                      skosxl:Label ;
                                                                             skosxl:literalForm "способность анализировать и оценивать уровни своих компетенций, владение способами приобретения и извлечения знаний, осуществления самостоятельной учебно-познавательной деятельности, выбора наиболее эффективных способов и алгоритмов решения задач в зависимости от конкретных условий"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#60d791b6-fe61-4ae9-a2d1-48585b450969
+<http://agentlab.ru/2019/edu_ontology#60d791b6-fe61-4ae9-a2d1-48585b450969> rdf:type owl:NamedIndividual ,
+                                                                                     :StudiyingProcess ;
+                                                                            :representsTE :Семинар_С1.1 .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#7de09273-1df6-47db-8f57-3b9d7c69aac1
@@ -688,6 +872,18 @@ ccso:Topic rdfs:label "Тема Занятия"@ru .
 <http://agentlab.ru/2019/edu_ontology#7778e6f5-1ba8-4271-99aa-fea0e8ecc119> rdf:type owl:NamedIndividual ,
                                                                                      skosxl:Label ;
                                                                             skosxl:literalForm "способность проводить предпроектное обследование объекта проектирования, системный анализ предметной области, их взаимосвязей"@ru .
+
+
+###  http://agentlab.ru/2019/edu_ontology#830
+<http://agentlab.ru/2019/edu_ontology#830> rdf:type owl:NamedIndividual ,
+                                                    <http://data.15926.org/dm/PointInTime> .
+
+
+###  http://agentlab.ru/2019/edu_ontology#830_
+<http://agentlab.ru/2019/edu_ontology#830_> rdf:type owl:NamedIndividual ,
+                                                     <http://data.15926.org/dm/ClassOfRepresentationOfThing> ;
+                                            <http://data.15926.org/dm/hasPattern> <http://agentlab.ru/2019/edu_ontology#2019_09_01T8:30> ;
+                                            <http://data.15926.org/dm/hasRepresented> <http://agentlab.ru/2019/edu_ontology#830> .
 
 
 ###  http://agentlab.ru/2019/edu_ontology#9cc0e6a0-3078-4de6-b346-9a5be8e173ce
@@ -741,9 +937,6 @@ ccso:KnowledgeBody rdfs:label "Программа"@ru .
 
 
 ccso:Master rdfs:label "Магистр"@ru .
-
-
-ccso:Student rdfs:label "Студент"@ru .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
