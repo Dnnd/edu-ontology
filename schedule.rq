@@ -10,33 +10,46 @@ PREFIX skosxl:	<http://www.w3.org/2008/05/skos-xl#>
 PREFIX esco:	<http://data.europa.eu/esco/model#>
 PREFIX dm:		<http://data.15926.org/dm/>
 
-
+# формат (преподаватель, событие (занятие), начало, окончание)
 SELECT ?teacher ?event ?start ?end
 WHERE {
+	# Получаем преподавателей-лекторов
 	?teacher a ccso:Lecturer .
 
+	# Получаем временные части преподавателей-лекторов - непосредственных участников учебного процесса
 	?shadow_conn a ?t .
 	?t rdfs:subClassOf* dm:TemporalWholePart .
 	?shadow_conn dm:hasWhole ?teacher .
+
+	# shadow - какая-либо временная часть ?teacher
 	?shadow_conn dm:hasPart ?shadow .
 
+	# Наложим ограничения на ?shadow
+	# ?shadow должен быть участником какого-либо процесса
 	?process_conn a ?p .
 	?p rdfs:subClassOf* dm:Participation .
 	?process_conn dm:hasPart ?shadow .
 	?process_conn dm:hasWhole ?process .
 
+	# Процесс должен представлять преподавательское занятие (ccso:TeachingEvent)
 	?process :representsTE ?event .
 
+	# Определим начало учебного процесса - ?start
 	?start a ?s .
+	# Начнем выборку с листового элемента - конкретной даты в календаре
 	?s rdfs:subClassOf* dm:RepresentationOfGregorianDateAndUtcTime .
 	?pit_conn dm:hasPattern ?start .
+	# дата в календаре должна быть представлена точкой во времени (dm:PointInTime)
 	?pit_conn dm:hasRepresented ?pit .
 
+	# Определим эвент-начало (dm:Beginning) учебного процесса - пару (?pit, ?process) 
 	?beg_conn a ?b .
 	?b rdfs:subClassOf* dm:Beginning .
 	?beg_conn dm:hasPart ?pit .
 	?beg_conn dm:hasWhole ?process .
 
+	
+	# Дата окончания учебного процесса (занятия) определяется аналогично началу занятия
 	?end a ?e .
 	?e rdfs:subClassOf* dm:RepresentationOfGregorianDateAndUtcTime .
 	?pit_end_conn dm:hasPattern ?end .
@@ -46,7 +59,6 @@ WHERE {
 	?f rdfs:subClassOf* dm:Ending .
 	?end_conn dm:hasPart ?pit_end .
 	?end_conn dm:hasWhole ?process .
-
 
 }
 
