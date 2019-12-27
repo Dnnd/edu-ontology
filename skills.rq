@@ -11,18 +11,21 @@ PREFIX esco:	<http://data.europa.eu/esco/model#>
 
 SELECT ?syllabus_ ?code ?competence ?level ?descriptor
 WHERE {
+	# Получение кода суос и его компетенции
 	?suos_competence_ 	a esco:Skill ;
 						skosxl:prefLabel ?label_ .
 	?label_ skosxl:literalForm ?competence .
 	?suos_ 	:hasSkill ?suos_competence_ ;
 			:hasCode ?code .
 	
+	# Получения описания компетенции
 	?descr_	esco:isOptionalSkillFor ?suos_competence_ ;
 				esco:skillType ?type ;
 				skosxl:prefLabel ?descr_label_ .
 	?descr_label_ skosxl:literalForm ?descriptor .
 	?syllabus_ ccso:aimsToLO ?suos_competence_.
 	
+	# Задание освоения
     VALUES (?level ?type) {		# В теории можно задать это в модели
             ( "знать" <http://data.europa.eu/esco/skill-type/knowledge> )
             ( "уметь" <http://data.europa.eu/esco/skill-type/skill> )

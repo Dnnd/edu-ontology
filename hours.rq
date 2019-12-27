@@ -9,17 +9,21 @@ PREFIX ccso:	<https://w3id.org/ccso/ccso#>
 PREFIX skosxl:	<http://www.w3.org/2008/05/skos-xl#>
 PREFIX esco:	<http://data.europa.eu/esco/model#>
 
-SELECT ?module ?method (COUNT(?duration) as ?hours)
+SELECT ?module ?method (SUM(?duration) as ?hours)
 WHERE {
+	# Получение списка тем в модуле
 	?module a ccso:KnowledgeUnit ;
 			ccso:lists ?topic .
 
+	# Получение списка модулей по предмету
 	?syll 	a ccso:Syllabus ;
 			:consistsOfModules ?module .
 
+	# Определение типов занятий
 	?te 	ccso:hasTopic ?topic ;
 			ccso:followsTEMethod ?method .
 
+	# Определение продолжительности занятия
 	?topic ccso:duration ?duration .
 }
 GROUP BY ?syll ?module ?method 

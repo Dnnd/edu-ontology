@@ -12,15 +12,19 @@ PREFIX esco:	<http://data.europa.eu/esco/model#>
 
 SELECT ?syll ?module ?method ?topic ?duration
 WHERE {
+	# Получение списка тем
 	?module a ccso:KnowledgeUnit ;
 			ccso:lists ?topic .
 
+	# Поучение рпд
 	?syll 	a ccso:Syllabus ;
 			:consistsOfModules ?module .
 
+	# Определение типа занятия
 	?te 	ccso:hasTopic ?topic ;
 			ccso:followsTEMethod ?method .
 
+	# Определение длительности занятий
 	?topic ccso:duration ?duration .
 }
 
